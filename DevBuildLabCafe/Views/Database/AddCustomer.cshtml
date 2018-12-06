@@ -1,0 +1,23 @@
+﻿
+@{
+
+    ViewBag.Title = "Register";
+    var emailpattern = @"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}";
+    var passwordpattern = @"^(?=.*\d).{4,15}$";
+
+}
+
+<h2>Register</h2>
+
+<form action="SaveNewCustomer" method="post" class="form-group">
+
+    <input type="hidden" name="CustomerID" />
+    First Name: <input type="text" name="FirstName" placeholder="First Name" required /> <br />
+    Last Name: <input type="text" name="LastName" placeholder="Last Name" required /><br />
+    Email Address:<input type="text" pattern="@emailpattern" name="Email" placeholder="Email" required /><br />
+    Phone: <input type="text" name="Phone" placeholder="Phone" required /> <br />
+    Password: <input type="password" pattern="@passwordpattern" name="Password" required /><br />
+    Password must be between 4 and 15 digits long and include at least one numeric digit. <br /><br />
+    <input type="submit" value="Submit Info" class="btn-group" />
+
+</form>

@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Menu";
+    
+}
+
+<h2>Menu</h2>
+
+<table class="table">
+   <tr>
+       <th>Item Name</th>
+       <th>Description</th>
+       <th>Unit Price</th>
+       <th>Quantity In Stock</th>
+   </tr>
+
+    @foreach (var item in ViewBag.ItemList)
+        {
+   <tr>
+       <td>@item.ItemName</td>
+       <td style="word-wrap:break-word">@item.Description</td>
+       <td>$@item.UnitPrice</td>
+       <td>@item.Quantity</td>
+   </tr>
+        }
+    
+</table>
+
+<div class="btn-group">
+    @Html.ActionLink("Add Item", "AddNewItem", "Database")
+</div>
